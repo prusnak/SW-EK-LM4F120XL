@@ -1,0 +1,11 @@
+.\rvmdk\timer.o: ..\Common\ethernet\uIP\uip-1.0\uip\timer.c
+.\rvmdk\timer.o: ..\Common\ethernet\uIP\uip-1.0\uip\clock.h
+.\rvmdk\timer.o: .\webserver\clock-arch.h
+.\rvmdk\timer.o: ..\..\Source\include\FreeRTOS.h
+.\rvmdk\timer.o: C:\Keil\ARM\RV31\INC\stddef.h
+.\rvmdk\timer.o: ..\..\Source\include\projdefs.h
+.\rvmdk\timer.o: .\FreeRTOSConfig.h
+.\rvmdk\timer.o: ..\..\Source\include\portable.h
+.\rvmdk\timer.o: ..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h
+.\rvmdk\timer.o: ..\..\Source\include\mpu_wrappers.h
+.\rvmdk\timer.o: ..\Common\ethernet\uIP\uip-1.0\uip\timer.h

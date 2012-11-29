@@ -1,0 +1,10 @@
+.\rvmdk\formike128x128x16.o: formike128x128x16.c
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\hw_gpio.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\hw_memmap.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\hw_types.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\gpio.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\sysctl.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\rom.h
+.\rvmdk\formike128x128x16.o: .\..\Common\drivers\LuminaryMicro\grlib.h
+.\rvmdk\formike128x128x16.o: formike128x128x16.h
+.\rvmdk\formike128x128x16.o: C:\Keil\ARM\RV31\INC\string.h

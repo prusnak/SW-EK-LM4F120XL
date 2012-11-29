@@ -1,0 +1,14 @@
+.\rvmdk\intqueue.o: ..\Common\Minimal\IntQueue.c
+.\rvmdk\intqueue.o: C:\Keil\ARM\RV31\INC\string.h
+.\rvmdk\intqueue.o: ..\..\Source\include\FreeRTOS.h
+.\rvmdk\intqueue.o: C:\Keil\ARM\RV31\INC\stddef.h
+.\rvmdk\intqueue.o: ..\..\Source\include\projdefs.h
+.\rvmdk\intqueue.o: .\FreeRTOSConfig.h
+.\rvmdk\intqueue.o: ..\..\Source\include\portable.h
+.\rvmdk\intqueue.o: ..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h
+.\rvmdk\intqueue.o: ..\..\Source\include\mpu_wrappers.h
+.\rvmdk\intqueue.o: ..\..\Source\include\queue.h
+.\rvmdk\intqueue.o: ..\..\Source\include\task.h
+.\rvmdk\intqueue.o: ..\..\Source\include\list.h
+.\rvmdk\intqueue.o: ..\Common\include\IntQueue.h
+.\rvmdk\intqueue.o: .\IntQueueTimer.h
