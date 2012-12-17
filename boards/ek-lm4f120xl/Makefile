@@ -38,6 +38,7 @@ DIRS=bitband        \
      uart_echo      \
      udma_demo      \
      usb_dev_bulk   \
+     usb_dev_mouse  \
      usb_dev_serial
 
 #
