@@ -2568,7 +2568,14 @@ USBDEP0StateTxConfig(unsigned long ulIndex)
         // Copy the USB configuration descriptor from the beginning of the
         // first section of the current configuration.
         //
-        sConfDesc = *(tConfigDescriptor *)g_psUSBDevice[0].pEP0Data;
+        tConfigDescriptor *tcd = (tConfigDescriptor *)g_psUSBDevice[0].pEP0Data;
+        sConfDesc.bLength = tcd->bLength;
+        sConfDesc.bDescriptorType = tcd->bDescriptorType;
+        sConfDesc.bNumInterfaces = tcd->bNumInterfaces;
+        sConfDesc.bConfigurationValue = tcd->bConfigurationValue;
+        sConfDesc.iConfiguration = tcd->iConfiguration;
+        sConfDesc.bmAttributes = tcd->bmAttributes;
+        sConfDesc.bMaxPower = tcd->bMaxPower;
 
         //
         // Update the total size.
