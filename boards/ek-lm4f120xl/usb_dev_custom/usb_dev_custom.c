@@ -38,42 +38,9 @@
 #include "usblib/usbhid.h"
 #include "usblib/device/usbdevice.h"
 #include "usblib/device/usbdhid.h"
-#include "usblib/device/usbdhidcustom.h"
+#include "usbdhidcustom.h"
 #include "usb_dev_custom_structs.h"
 
-
-//*****************************************************************************
-//
-//! \addtogroup example_list
-//! <h1>USB HID CustomHid Device (usb_dev_customhid)</h1>
-//!
-//! This example is a volume up and down HID device (right stellaris button increases volume, left decreases)
-//! This utilizes usbhidcustom.c file which allows you to easily create custom devices (including combination HID devices)
-//! Make sure usbhidcustom.c has this descriptor and header has CUSTOMHID_REPORT_SIZE=1
-/*
-	static const unsigned char g_pucCustomHidReportDescriptor[]=
-	{
-
-			UsagePage(USB_HID_CONSUMER_DEVICE),
-			Usage(USB_HID_USAGE_CONSUMER_CONTROL),
-			Collection(USB_HID_APPLICATION),
-
-				LogicalMinimum(0),
-				LogicalMaximum(1),
-				Usage(USB_HID_VOLUME_UP),
-				Usage(USB_HID_VOLUME_DOWN),
-				ReportSize(1),
-				ReportCount(2),
-				Input(USB_HID_INPUT_DATA | USB_HID_INPUT_VARIABLE | USB_HID_INPUT_RELATIVE),
-
-				ReportCount(6),
-				Input(USB_HID_INPUT_CONSTANT | USB_HID_INPUT_ARRAY | USB_HID_INPUT_ABS),
-
-			EndCollection,
-
-	};
-
-*/
 
 //*****************************************************************************
 

@@ -79,6 +79,7 @@ ${COMPILER}/usb_dev_custom.axf: ${COMPILER}/startup_${COMPILER}.o
 ${COMPILER}/usb_dev_custom.axf: ${COMPILER}/uartstdio.o
 ${COMPILER}/usb_dev_custom.axf: ${COMPILER}/usb_dev_custom.o
 ${COMPILER}/usb_dev_custom.axf: ${COMPILER}/usb_dev_custom_structs.o
+${COMPILER}/usb_dev_custom.axf: ${COMPILER}/usbdhidcustom.o
 ${COMPILER}/usb_dev_custom.axf: ${ROOT}/usblib/${COMPILER}-cm4f/libusb-cm4f.a
 ${COMPILER}/usb_dev_custom.axf: ${ROOT}/driverlib/${COMPILER}-cm4f/libdriver-cm4f.a
 ${COMPILER}/usb_dev_custom.axf: usb_dev_custom.ld
