@@ -1,8 +1,7 @@
 /******************************************************************************
  *
- * usb_dev_mouse_ccs.cmd - CCS linker configuration file for usb_dev_mouse.
  *
- * Copyright (c) 2009-2012 Texas Instruments Incorporated.  All rights reserved.
+ * Copyright (c) 2012 Texas Instruments Incorporated.  All rights reserved.
  * Software License Agreement
  * 
  * Texas Instruments (TI) is supplying this software for use solely and
@@ -18,7 +17,7 @@
  * CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
  * DAMAGES, FOR ANY REASON WHATSOEVER.
  * 
- * This is part of revision 9453 of the EK-LM3S9D90 Firmware Package.
+ * This is part of revision 9453 of the EK-LM4F120XL Firmware Package.
  *
  *****************************************************************************/
 
@@ -44,9 +43,9 @@
 MEMORY
 {
     /* Application stored in and executes from internal flash */
-    FLASH (RX) : origin = APP_BASE, length = 0x00080000
+    FLASH (RX) : origin = APP_BASE, length = 0x00040000
     /* Application uses internal RAM for data */
-    SRAM (RWX) : origin = 0x20000000, length = 0x00018000
+    SRAM (RWX) : origin = 0x20000000, length = 0x00008000
 }
 
 /* Section allocation in memory */
@@ -67,4 +66,4 @@ SECTIONS
     .stack  :   > SRAM
 }
 
-__STACK_TOP = __stack + 640;
+__STACK_TOP = __stack + 1024;

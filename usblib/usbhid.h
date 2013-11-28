@@ -105,12 +105,31 @@ extern "C"
 //*****************************************************************************
 #define USB_HID_GENERIC_DESKTOP 0x01
 #define USB_HID_BUTTONS         0x09
+#define USB_HID_CONSUMER_DEVICE 0x0C
+
 #define USB_HID_X               0x30
 #define USB_HID_Y               0x31
+#define USB_HID_Z               0x32
+#define USB_HID_RX              0x33
+#define USB_HID_RY              0x34
+#define USB_HID_RZ              0x35
+#define USB_HID_HAT             0x39
+
+#define USB_HID_SCAN_NEXT       0xB5
+#define USB_HID_SCAN_PREV	0xB6
+#define USB_HID_STOP            0xB7
+#define USB_HID_PLAY_PAUSE	0xCD
+#define USB_HID_MUTE            0xE2
+#define USB_HID_VOLUME_UP	0xE9
+#define USB_HID_VOLUME_DOWN     0xEA
+
 
 #define USB_HID_POINTER         0x01
 #define USB_HID_MOUSE           0x02
+#define USB_HID_JOYSTICK        0x04
+#define USB_HID_GAMEPAD         0x05
 #define USB_HID_KEYBOARD        0x06
+#define USB_HID_USAGE_CONSUMER_CONTROL  0x01 //Usage values aren't unique they depend on the USAGE_PAGE Value
 
 #define USB_HID_PHYSICAL        0x00
 #define USB_HID_APPLICATION     0x01
@@ -119,6 +138,7 @@ extern "C"
 #define USB_HID_USAGE_BUTTONS   0x0509
 #define USB_HID_USAGE_LEDS      0x0508
 #define USB_HID_USAGE_KEYCODES  0x0507
+
 
 //*****************************************************************************
 //
