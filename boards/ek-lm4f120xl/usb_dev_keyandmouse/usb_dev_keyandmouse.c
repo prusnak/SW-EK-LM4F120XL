@@ -39,7 +39,7 @@
 #include "usblib/device/usbdevice.h"
 #include "usblib/device/usbdhid.h"
 #include "usblib/device/usbdhidcustom.h"
-#include "usb_dev_KeyandMouse_structs.h"
+#include "usb_dev_keyandmouse_structs.h"
 
 
 //*****************************************************************************

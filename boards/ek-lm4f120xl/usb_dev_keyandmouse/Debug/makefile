@@ -8,13 +8,13 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/tms470_4.9.5
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./usb_dev__KeyandMouse.obj" \
-"./usb_dev_KeyandMouse_structs.obj" \
+"./usb_dev_keyandmouse.obj" \
+"./usb_dev_keyandmouse_structs.obj" \
 "./startup_ccs.obj" \
 -l"libc.a" \
 -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_bulk/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" \
 -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_bulk/ccs/../../../../usblib/ccs-cm4f/Debug/usblib-cm4f.lib" \
-"../usb_dev_KeyandMouse_ccs.cmd" \
+"../usb_dev_keyandmouse_ccs.cmd" \
 
 -include ../makefile.init
 
@@ -113,27 +113,27 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: usb_dev_KeyandMouse.out
+all: usb_dev_keyandmouse.out
 
 # Tool invocations
-usb_dev_KeyandMouse.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+usb_dev_keyandmouse.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -O2 -g --gcc --define=ccs="ccs" --define=PART_LM4F120H5QR --define=TARGET_IS_BLIZZARD_RA1 --define=UART_BUFFERED --diag_warning=225 --display_error_number --gen_func_subsections=on --ual -z --stack_size=1024 -m"usb_dev_mouse_ccs.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/lib" -i"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --reread_libs --warn_sections --display_error_number --rom_model -o "usb_dev_KeyandMouse.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/cl470" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -O2 -g --gcc --define=ccs="ccs" --define=PART_LM4F120H5QR --define=TARGET_IS_BLIZZARD_RA1 --define=UART_BUFFERED --diag_warning=225 --display_error_number --gen_func_subsections=on --ual -z --stack_size=1024 -m"usb_dev_mouse_ccs.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/lib" -i"C:/ti/ccsv5/tools/compiler/tms470_4.9.5/include" --reread_libs --warn_sections --display_error_number --rom_model -o "usb_dev_keyandmouse.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "usb_dev_KeyandMouse.out"
-	-$(RM) "startup_ccs.pp" "usb_dev_KeyandMouse_structs.pp" "usb_dev__KeyandMouse.pp" 
-	-$(RM) "startup_ccs.obj" "usb_dev_KeyandMouse_structs.obj" "usb_dev__KeyandMouse.obj" 
+	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "usb_dev_keyandmouse.out"
+	-$(RM) "startup_ccs.pp" "usb_dev_keyandmouse_structs.pp" "usb_dev_keyandmouse.pp" 
+	-$(RM) "startup_ccs.obj" "usb_dev_keyandmouse_structs.obj" "usb_dev_keyandmouse.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 post-build:
-	-"C:/ti/ccsv5/utils/tiobj2bin/tiobj2bin" "usb_dev_KeyandMouse.out" "usb_dev_KeyandMouse.bin" "C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/ofd470" "C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/hex470" "C:/ti/ccsv5/utils/tiobj2bin/mkhex4bin"
+	-"C:/ti/ccsv5/utils/tiobj2bin/tiobj2bin" "usb_dev_keyandmouse.out" "usb_dev_keyandmouse.bin" "C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/ofd470" "C:/ti/ccsv5/tools/compiler/tms470_4.9.5/bin/hex470" "C:/ti/ccsv5/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents
