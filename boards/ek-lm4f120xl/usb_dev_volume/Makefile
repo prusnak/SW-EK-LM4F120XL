@@ -79,6 +79,7 @@ ${COMPILER}/usb_dev_volume.axf: ${COMPILER}/startup_${COMPILER}.o
 ${COMPILER}/usb_dev_volume.axf: ${COMPILER}/uartstdio.o
 ${COMPILER}/usb_dev_volume.axf: ${COMPILER}/usb_dev_volume.o
 ${COMPILER}/usb_dev_volume.axf: ${COMPILER}/usb_dev_volume_structs.o
+${COMPILER}/usb_dev_volume.axf: ${COMPILER}/usbdhidcustom.o
 ${COMPILER}/usb_dev_volume.axf: ${ROOT}/usblib/${COMPILER}-cm4f/libusb-cm4f.a
 ${COMPILER}/usb_dev_volume.axf: ${ROOT}/driverlib/${COMPILER}-cm4f/libdriver-cm4f.a
 ${COMPILER}/usb_dev_volume.axf: usb_dev_volume.ld

@@ -38,7 +38,7 @@
 #include "usblib/usbhid.h"
 #include "usblib/device/usbdevice.h"
 #include "usblib/device/usbdhid.h"
-#include "usblib/device/usbdhidcustom.h"
+#include "usbdhidcustom.h"
 #include "usb_dev_volume_structs.h"
 
 
