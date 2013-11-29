@@ -39,6 +39,12 @@ DIRS=bitband        \
      udma_demo      \
      usb_dev_bulk   \
      usb_dev_mouse  \
+     usb_dev_keyboard    \
+     usb_dev_custom      \
+     usb_dev_volume      \
+     usb_dev_gamepad     \
+     usb_dev_composite   \
+     usb_dev_keyandmouse \
      usb_dev_serial
 
 #
