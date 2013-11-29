@@ -19,10 +19,12 @@
 // DAMAGES, FOR ANY REASON WHATSOEVER.
 // 
 // This is a modification of part of revision 9453 of the EK-LM3S9D90 Firmware Package.
+// Tweaked for the Stellaris Launchpad by Jeff Lawrence
 //
 //*****************************************************************************
 
 #include "inc/hw_memmap.h"
+#include "driverlib/fpu.h"
 #include "inc/hw_types.h"
 #include "driverlib/debug.h"
 #include "driverlib/gpio.h"
@@ -37,6 +39,7 @@
 #include "usblib/device/usbdhidmouse.h"
 #include "utils/uartstdio.h"
 #include "usb_mouse_structs.h"
+
 
 //*****************************************************************************
 //
@@ -57,8 +60,8 @@
 // The incremental update for the mouse.
 //
 //*****************************************************************************
-#define MOUSE_MOVE_INC          1
-#define MOUSE_MOVE_DEC          -1
+#define MOUSE_MOVE_INC          5
+#define MOUSE_MOVE_DEC          -5
 
 //*****************************************************************************
 //
@@ -275,8 +278,7 @@ MoveHandler(void)
     // Tell the HID driver to send this new report.
     //
     g_eMouseState = MOUSE_STATE_SENDING;
-    ulRetcode = USBDHIDMouseStateChange((void *)&g_sMouseDevice, cDeltaX,
-                                        cDeltaY, 0);
+    ulRetcode = USBDHIDMouseStateChange((void *)&g_sMouseDevice, cDeltaX, cDeltaY, 0);
 
     //
     // Did we schedule the report for transmission?
@@ -305,7 +307,7 @@ MoveHandler(void)
 //
 //*****************************************************************************
 void
-SysTickHandler(void)
+SysTickIntHandler(void)
 {
     g_ulSysTickCount++;
     HWREGBITW(&g_ulCommands, TICK_EVENT) = 1;
@@ -319,11 +321,12 @@ SysTickHandler(void)
 int
 main(void)
 {
+
+	ROM_FPULazyStackingEnable();
     //
     // Set the clocking to run from the PLL at 50MHz.
     //
-    ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
-                       SYSCTL_XTAL_16MHZ);
+    ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
     //
     // Enable the UART.
@@ -333,15 +336,13 @@ main(void)
     GPIOPinConfigure(GPIO_PA1_U0TX);
     ROM_GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
     UARTStdioInit(0);
-    UARTprintf("\033[2JMouse device application\n");
+    UARTprintf("\033[2JMouse device application started\n");
 
-    // Configure USB pins, according to 
-    // http://forum.stellarisiti.com/topic/353-work-around-stellaris-launchpad-usb-serial-example-not-enumerating-correctly/?p=1544
-    // Enable the GPIO port so we can configure it
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);   
-    // Setup the port to be in USB analog mode. Routes incoming signals to 
-    // on-chip USB PHY
-    GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5); 
+    //
+    // Configure USB pins
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+    GPIOPinTypeUSBAnalog(GPIO_PORTD_BASE, GPIO_PIN_4 | GPIO_PIN_5);
 
     //
     // Set the system tick to fire 100 times per second.

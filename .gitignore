@@ -2,3 +2,7 @@
 *.o
 *.axf
 *.bin
+*.out
+*.lib
+*.a
+*.obj

@@ -49,6 +49,8 @@
 #define USB_PID_COMP_HID_SER    0x0009
 #define USB_PID_COMP_HID_DFU    0x000A
 #define USB_PID_DATA_LOGGER     0x000B
+#define USB_PID_GAMEPAD         0x000C
+#define USB_PID_CUSTOM          0x000D
 #define USB_PID_DFU             0x00FF
 
 #ifndef DEPRECATED

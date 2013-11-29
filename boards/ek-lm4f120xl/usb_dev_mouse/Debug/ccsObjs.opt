@@ -1,0 +1,1 @@
+"./utils/uartstdio.obj" "./usb_mouse_structs.obj" "./usb_dev_mouse.obj" "./startup_ccs.obj" -l"libc.a" -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_bulk/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_bulk/ccs/../../../../usblib/ccs-cm4f/Debug/usblib-cm4f.lib" "../usb_dev_mouse_ccs.cmd" 
